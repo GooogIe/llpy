@@ -22,8 +22,8 @@
 - [x] Basic parsing
 - [x] By agency name
 - [x] By agency ID
-- [ ] Parse all agencies
-- [ ] Search
+- [x] Parse all agencies
+- [x] Search
 ##### TODO :Agency Type:
 - [ ] todo
 ##### TODO :Calendar:
@@ -48,3 +48,7 @@
 - [ ] todo
 ##### TODO :Rocket Type:
 - [ ] todo
+
+
+##### TODO :other:
+- [ ] a proper exception handler
