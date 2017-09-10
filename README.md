@@ -19,7 +19,11 @@
 - [ ] Rocket Type
 
 ##### TODO :Agency:
-- [ ] todo
+- [x] Basic parsing
+- [x] By agency name
+- [x] By agency ID
+- [ ] Parse all agencies
+- [ ] Search
 ##### TODO :Agency Type:
 - [ ] todo
 ##### TODO :Calendar:
