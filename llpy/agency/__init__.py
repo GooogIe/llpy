@@ -1,7 +1,7 @@
 import requests
 
-from llpy.constants import URL
 from llpy import LLpyException
+from llpy.constants import URL
 
 
 class Agency:
