@@ -2,8 +2,8 @@
 ### A launchlibrary.net python wrapper
 
 ## TODO:
-- [ ] Agency
-- [ ] Agency Type
+- [x] Agency
+- [x] Agency Type
 - [ ] Calendar
 - [ ] Event Type
 - [ ] Launch
@@ -25,7 +25,9 @@
 - [x] Parse all agencies
 - [x] Search
 ##### TODO :Agency Type:
-- [ ] todo
+- [x] all
+- [x] id
+- [x] name
 ##### TODO :Calendar:
 - [ ] todo
 ##### TODO :Event Type:
@@ -51,4 +53,4 @@
 
 
 ##### TODO :other:
-- [ ] a proper exception handler
+- [x] a proper exception handler
