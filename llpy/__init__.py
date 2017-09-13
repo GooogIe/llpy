@@ -2,41 +2,39 @@ import requests
 from llpy.constants import URL
 
 class LLpyException(Exception):
-    def __init__(self, msg, full=None):
-        super(LLpyException, self).__init__('Exception: ' + msg)
-        if full:
-            self.full_exc = full
+	def __init__(self, msg, full=None):
+		super(LLpyException, self).__init__('Exception: ' + msg)
+		if full:
+			self.full_exc = full
 
 
 class Base:
-    def __init__(self, instance):
-        raw = self.__get_the(instance)
+	def __init__(self, instance):
+		self._inside = dict()
+		raw = self.__get_the(instance)
         self.__parse(raw)
 
-    def __get_the(self, instance):
-        try:
-            r = requests.get(URL + instance[0] + '/' + instance[1]).json()[instance[2]][0]
-            return r
-        except Exception as e:
-            raise LLpyException('error in request', str(e))
+	# TODO should be added some more
+	fields = ['id', 'name', 'countryCode', 'abbrev',
+			'type', 'wikiURL', 'infoURLs', 'agencies',
+			'relativeTime', 'duration', 'parentid' ,
+			'imageURL', 'defaultPads', 'family',
+			 'mapURL', 'locationid', 'mapURL']
 
-    def __parse(self, raw):
-        # TODO should be added some more
-        try:
-            if 'id' in raw:
-                self.id = raw['id']
-            if 'name' in raw:
-                self.name = raw['name']
-            if 'countryCode' in raw:
-                self.countryCode = raw['countryCode']
-            if 'abbrev' in raw:
-                self.abbrev = raw['abbrev']
-            if 'type' in raw:
-                self.type = raw['type']
-            if 'wikiURL' in raw:
-                self.wikiURL = raw['wikiURL']
-            if 'infoURLs' in raw:
-                self.infoURLs = raw['infoURLs'] if raw['infoURLs'] else None
+    def __getitem__(self, key):
+        return self._inside[key]
 
-        except Exception as e:
-            raise LLpyException('error while parsing', str(e))
+	def __get_the(self, instance):
+		try:
+			r = requests.get(URL + instance[0] + '/' + instance[1]).json()[instance[2]][0]
+			return r
+		except Exception as e:
+			raise LLpyException('error in request', str(e))
+
+	def __parse(self, raw):
+		try:
+			for field in self.fields:
+				if field in raw:
+					self._inside[field] = raw[field]
+		except Exception as e:
+			raise LLpyException('error while parsing', str(e))
