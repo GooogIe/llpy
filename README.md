@@ -4,7 +4,6 @@
 ## TODO:
 - [x] Agency
 - [x] Agency Type
-- [ ] Calendar
 - [ ] Event Type
 - [ ] Launch
 - [ ] Launch Event
@@ -14,8 +13,9 @@
 - [ ] Mission Status
 - [ ] Mission Type
 - [ ] Pad
-- [ ] Rocket
-- [ ] Rocket Event
+- [x] Rocket
+- [x] Rocket Event
+- [x] Rocket Family
 - [ ] Rocket Type
 
 ##### TODO :Agency:
@@ -28,8 +28,6 @@
 - [x] all
 - [x] id
 - [x] name
-##### TODO :Calendar:
-- [ ] todo
 ##### TODO :Event Type:
 - [ ] todo
 ##### TODO :Launch:
