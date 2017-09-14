@@ -13,8 +13,9 @@
 - [ ] Mission Status
 - [ ] Mission Type
 - [ ] Pad
-- [ ] Rocket
-- [ ] Rocket Event
+- [x] Rocket
+- [x] Rocket Event
+- [x] Rocket Family
 - [ ] Rocket Type
 
 ##### TODO :Agency:
