@@ -8,5 +8,5 @@ setup(
     license='GNU General Public License v3.0',
     author='veetaw',
     author_email='',
-    description=''
+    description='launchlibrary.net python wrapper'
 )
