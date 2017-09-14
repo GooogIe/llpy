@@ -4,7 +4,6 @@
 ## TODO:
 - [x] Agency
 - [x] Agency Type
-- [ ] Calendar
 - [ ] Event Type
 - [ ] Launch
 - [ ] Launch Event
@@ -28,8 +27,6 @@
 - [x] all
 - [x] id
 - [x] name
-##### TODO :Calendar:
-- [ ] todo
 ##### TODO :Event Type:
 - [ ] todo
 ##### TODO :Launch:
