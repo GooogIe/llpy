@@ -4,12 +4,9 @@ from llpy import LLpyException, Base
 from llpy.constants import URL
 
 
-class Agency(Base):
+class Rocket(Base):
 	def __get_the(self, query):
-		Base.__get_the(self, ['agency', query, 'agencies'])
-
-	def __parse(self, raw):
-		Base.__parse(self, raw)
+		Base.__get_the(self, ['rocket', query, 'rockets'])
 
 	def search(self, query):
 		try:
@@ -18,6 +15,10 @@ class Agency(Base):
 			raise LLpyException('search', str(e))
 
 
-class AgencyType(Base):
+class RocketEvent(Base):
 	def __get_the(self, query):
-		Base.__get_the(self, ['agencytype', query, 'types'])
+		Base.__get_the(self, ['rocketevent', query, ''])
+
+class RocketFamily(Base):
+	def __get_the(self, query):
+		Base.__get_the(self, ['rocketfamily', query, 'RocketFamilies'])
