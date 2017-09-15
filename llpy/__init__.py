@@ -21,7 +21,9 @@ class Base:
               'type', 'wikiURL', 'infoURLs', 'agencies',
               'relativeTime', 'duration', 'parentid',
               'imageURL', 'defaultPads', 'family',
-              'mapURL', 'locationid', 'mapURL']
+              'mapURL', 'locationid', 'mapURL',
+              'description', 'launch', 'infoURL',
+              'events']
 
 
     def __getitem__(self, key):
