@@ -6,7 +6,7 @@ from llpy.constants import URL
 
 class Rocket(Base):
     def __get_the(self, query):
-        Base.__get_the(self, ['rocket', query, 'rockets'])
+        return Base.__get_the(self, ['rocket', query, 'rockets'])
 
     def search(self, query):
         try:
@@ -17,9 +17,9 @@ class Rocket(Base):
 
 class RocketEvent(Base):
     def __get_the(self, query):
-        Base.__get_the(self, ['rocketevent', query, ''])
+        return Base.__get_the(self, ['rocketevent', query, ''])
 
 
 class RocketFamily(Base):
     def __get_the(self, query):
-        Base.__get_the(self, ['rocketfamily', query, 'RocketFamilies'])
+        return Base.__get_the(self, ['rocketfamily', query, 'RocketFamilies'])

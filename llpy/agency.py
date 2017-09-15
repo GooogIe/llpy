@@ -6,10 +6,7 @@ from llpy.constants import URL
 
 class Agency(Base):
     def __get_the(self, query):
-        Base.__get_the(self, ['agency', query, 'agencies'])
-
-    def __parse(self, raw):
-        Base.__parse(self, raw)
+        return Base.__get_the(self, ['agency', query, 'agencies'])
 
     def search(self, query):
         try:
@@ -20,4 +17,4 @@ class Agency(Base):
 
 class AgencyType(Base):
     def __get_the(self, query):
-        Base.__get_the(self, ['agencytype', query, 'types'])
+        return Base.__get_the(self, ['agencytype', query, 'types'])
