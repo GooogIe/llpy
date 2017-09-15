@@ -9,18 +9,10 @@ class Rocket(Base):
     def __get_the(self, query):
         return Base.__get_the(self, query)
 
-    def search(self, query):
-        try:
-            return requests.get(URL + 'agency?name=' + query).json()['agencies']
-        except Exception as e:
-            raise LLpyException('search', str(e))
-
-
 class RocketEvent(Base):
     instance_name = ['rocketevent', '']
     def __get_the(self, query):
         return Base.__get_the(self, query)
-
 
 class RocketFamily(Base):
     instance_name = ['rocketfamily', 'RocketFamilies']
