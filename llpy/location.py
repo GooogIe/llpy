@@ -1,5 +1,3 @@
-import requests
-
 from llpy import LLpyException, Base
 from llpy.constants import URL
 
