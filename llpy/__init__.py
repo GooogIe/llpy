@@ -12,9 +12,12 @@ class LLpyException(Exception):
 class Base:
     instance_name = []
 
-    def __init__(self, instance):
+    def __init__(self, query=None, copy=None):
+        """
+        copy -- if you have raw variant of the object
+        """
         self._inside = dict()
-        raw = self.__get_the(instance)
+        raw = self.__get_the(query) if query else copy
 
         self.__parse(raw)
 
@@ -59,7 +62,6 @@ class Base:
         """
         request = '?' + '&'.join([key + '=' + val for key, val in kwargs.items()])
         return self.__requester(request)
-
 
     def __parse(self, raw):
         try:
