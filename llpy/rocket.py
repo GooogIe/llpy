@@ -5,8 +5,9 @@ from llpy.constants import URL
 
 
 class Rocket(Base):
+    instance_name = ['rocket', 'rockets']
     def __get_the(self, query):
-        return Base.__get_the(self, ['rocket', query, 'rockets'])
+        return Base.__get_the(self, query)
 
     def search(self, query):
         try:
@@ -16,10 +17,12 @@ class Rocket(Base):
 
 
 class RocketEvent(Base):
+    instance_name = ['rocketevent', '']
     def __get_the(self, query):
-        return Base.__get_the(self, ['rocketevent', query, ''])
+        return Base.__get_the(self, query)
 
 
 class RocketFamily(Base):
+    instance_name = ['rocketfamily', 'RocketFamilies']
     def __get_the(self, query):
-        return Base.__get_the(self, ['rocketfamily', query, 'RocketFamilies'])
+        return Base.__get_the(self, query)
