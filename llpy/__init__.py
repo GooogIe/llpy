@@ -10,6 +10,8 @@ class LLpyException(Exception):
 
 
 class Base:
+    instance_name = []
+
     def __init__(self, instance):
         self._inside = dict()
         raw = self.__get_the(instance)
@@ -25,16 +27,39 @@ class Base:
               'description', 'launch', 'infoURL',
               'events']
 
-
     def __getitem__(self, key):
         return self._inside[key]
 
-    def __get_the(self, instance):
+    def __requester(self, request):
+        """
+        request is '/1' or '?mode=verbose'    ----   '/' or '?' is necessary
+        instance is a list e.g.   ['agency', 'agencies']
+        """
         try:
-            r = requests.get(URL + instance[0] + '/' + instance[1]).json()[instance[2]][0]
+            r = requests.get(URL + self.instance_name[0] + request).json()[self.instance_name[1]]
             return r
         except Exception as e:
             raise LLpyException('error in request', str(e))
+
+
+    def __get_the(self, request):
+        """
+        instance is a list e.g.   ['agency', 'agencies']
+        request    'nasa' or 1
+        may return a list of instances
+        """
+        return self.__requester('/' + request)
+
+
+    def __get_specific(self, **kwargs):
+        """
+        to use requests as https://launchlibrary.net/1.2/mission?launchid=12
+          or https://launchlibrary.net/1.2/launch?mode=verbose&next=1
+        may return a list of instances
+        """
+        request = '?' + '&'.join([key + '=' + val for key, val in kwargs.items()])
+        return self.__requester(request)
+
 
     def __parse(self, raw):
         try:
