@@ -14,7 +14,7 @@ class Base:
         self._inside = dict()
         raw = self.__get_the(instance)
 
-    self.__parse(raw)
+        self.__parse(raw)
 
     # TODO should be added some more
     fields = ['id', 'name', 'countryCode', 'abbrev',
@@ -24,8 +24,8 @@ class Base:
               'mapURL', 'locationid', 'mapURL']
 
 
-def __getitem__(self, key):
-    return self._inside[key]
+    def __getitem__(self, key):
+        return self._inside[key]
 
     def __get_the(self, instance):
         try:
