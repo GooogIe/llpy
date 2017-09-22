@@ -1,11 +1,11 @@
-from llpy import LLpyException, Base
-from llpy.constants import URL
+from llpy import Base
 
 from llpy.rocket import Rocket
 
 
 class Launch(Base):
     instance_name = ['launch', 'launches']
+
     def __get_the(self, query):
         return Base.__get_the(self, query)
 

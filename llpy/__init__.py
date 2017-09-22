@@ -44,7 +44,6 @@ class Base:
         except Exception as e:
             raise LLpyException('error in request', str(e))
 
-
     def __get_the(self, request):
         """
         instance is a list e.g.   ['agency', 'agencies']
@@ -52,7 +51,6 @@ class Base:
         may return a list of instances
         """
         return self.__requester('/' + request)
-
 
     def __get_specific(self, **kwargs):
         """
